@@ -56,8 +56,8 @@ print("------------------------")
 print("Total Months: " + str(month_count))
 print("Total: $" + str(P_L))
 print("Average Change: $" + str(avgChg))
-print("Greatest Increase in Profits : " + maxMon + "  $" + str(Max))
-print("Greatest Decrease in Profits : " + minMon + "  $" + str(Min))
+print("Greatest Increase in Profits : " + maxMon + "  ($" + str(Max) + ")")
+print("Greatest Decrease in Profits : " + minMon + "  ($" + str(Min) + ")")
 #print(x)
 
 #Export Text file
@@ -75,7 +75,7 @@ with open(output_path, 'w', newline='') as csvfile:
     csvwriter.writerow(['Total Months: ' + str(month_count)])
     csvwriter.writerow(['Total: $' + str(P_L)])
     csvwriter.writerow(['Average Change: $' + str(avgChg)])
-    csvwriter.writerow(['Greatest Increase in Profits : ' + maxMon + '  $' + str(Max)])
-    csvwriter.writerow(['Greatest Decrease in Profits : ' + minMon + '  $' + str(Min)])
+    csvwriter.writerow(['Greatest Increase in Profits : ' + maxMon + '  ($' + str(Max) + ')'])
+    csvwriter.writerow(['Greatest Decrease in Profits : ' + minMon + '  ($' + str(Min) + ')'])
 
 
