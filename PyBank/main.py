@@ -10,7 +10,7 @@ Min = 0
 data =[]
 data2=[]
 
-#Initialize and set phasers to stun
+#Initialize
 with open(myFile, newline="") as csvfile:
     csvreader= csv.reader(csvfile,delimiter=",")
     
@@ -24,6 +24,7 @@ with open(myFile, newline="") as csvfile:
 
 #Sum up totals for revenue
             P_L += int(row[1])
+ #           P_L += float(row[1])
 
 #Convert column 1 into an array
             data.append(row[1])
@@ -58,7 +59,9 @@ print("Total: $" + str(P_L))
 print("Average Change: $" + str(avgChg))
 print("Greatest Increase in Profits : " + maxMon + "  ($" + str(Max) + ")")
 print("Greatest Decrease in Profits : " + minMon + "  ($" + str(Min) + ")")
-#print(x)
+print("                                         ")
+#print(max(data))
+#print(min(data))
 
 #Export Text file
 output_path = os.path.join("Resources/PyBank.txt")
