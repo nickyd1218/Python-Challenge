@@ -13,6 +13,7 @@ y = 0
 z = 0
 
 
+
 #Initialize 
 with open(myFile, newline="") as csvfile:
     csvreader= csv.reader(csvfile,delimiter=",")
@@ -46,6 +47,17 @@ wPer = round(int((w / total_votes) * 100),4)
 xPer = round(int((x / total_votes) * 100),4)
 yPer = round(int((y / total_votes) * 100),4)
 zPer = round(int((z / total_votes) * 100),4)
+
+#Determine winner
+if w > x and w > y and w > z:
+    winner = str(ticket[0])
+if x > w and x > y and x > z:
+    winner = str(ticket[1])
+if y > x and y > z and y > z:
+    winner = str(ticket[2])
+if z > x and z > y and z > x:
+    winner = str(ticket[3])
+
                
 #print(names)
 
@@ -59,7 +71,7 @@ print(str(ticket[1]) + ": " + str(xPer) + "%" + " (" + str(x) + ")")
 print(str(ticket[2]) + ": " + str(yPer) + "%" + " (" + str(y) + ")")
 print(str(ticket[3]) + ": " + str(zPer) + "%" + " (" + str(z) + ")")
 print("------------------------")
-print("Winner: ")
+print("Winner: " + str(winner))
 print("------------------------")
 
 #Export Text file
@@ -81,6 +93,6 @@ with open(output_path, 'w', newline='') as csvfile:
     csvwriter.writerow([str(ticket[2]) + ': ' + str(yPer) + '%' + ' (' + str(y) + ')'])
     csvwriter.writerow([str(ticket[3]) + ': ' + str(zPer) + '%' + ' (' + str(z) + ')'])
     csvwriter.writerow(['--------------------------'])                
-    csvwriter.writerow(['Winner: '])
+    csvwriter.writerow(['Winner: ' + str(winner)])
     csvwriter.writerow(['--------------------------'])                                       
                        
