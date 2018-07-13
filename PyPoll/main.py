@@ -25,7 +25,8 @@ with open(myFile, newline="") as csvfile:
     for row in csvreader:
         total_votes = total_votes + 1
 
-        #Put names into list
+        #Put names into 2 lists - one to determine ticket name
+        #the other to do count all of the votes
         names.append(row[2])
         names2. append(row[2])
         
