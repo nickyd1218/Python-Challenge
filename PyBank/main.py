@@ -24,10 +24,9 @@ with open(myFile, newline="") as csvfile:
 
 #Sum up totals for revenue
             P_L += int(row[1])
- #           P_L += float(row[1])
 
 #Convert column 1 into an array
-            data.append(row[1])
+            data.append(int(row[1]))
 
 #Convert column 0 into an array
 #(to index locate the corresponding months at end)
@@ -50,7 +49,6 @@ maxMon = data2[x]
 minMon = data2[y]
 
 #Output everything to terminal
-
 print("                                         ")
 print("Financial Analysis")
 print("------------------------")
