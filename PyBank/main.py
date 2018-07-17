@@ -9,6 +9,7 @@ Max = 0
 Min = 0
 data =[]
 data2=[]
+data3=[]
 
 #Initialize
 with open(myFile, newline="") as csvfile:
@@ -31,24 +32,32 @@ with open(myFile, newline="") as csvfile:
 #Convert column 0 into an array
 #(to index locate the corresponding months at end)
             data2.append(row[0])
-            
+
+#Find greatest change in profit by taking difference between
+#consecutive months
+data3 = [x-data[i-1] for i, x in enumerate(data)][1:]
+
+#Sum up total in data3
+P__L = sum(data3)
+
 #Calculate average (rounded to 2 points after decimal)         
-avgChg = round(int(P_L)/int(month_count),2)
+avgChg = round(int(P__L)/int(month_count-1),2)
 
 #Find max
-Max = max(data)
+Max = max(data3)
 #Find min
-Min = min(data)
+Min = min(data3)
 
 #Find the Max and Min indices 
-x = data.index(Max)
-y = data.index(Min)
+x = data3.index(Max)
+y = data3.index(Min)
 
 #Find the correspond month/year to the Max and Min via index lookup
-maxMon = data2[x]
-minMon = data2[y]
+maxMon = data2[x + 1]
+minMon = data2[y + 1]
 
 #Output everything to terminal
+print(P__L)
 print("                                         ")
 print("Financial Analysis")
 print("------------------------")
