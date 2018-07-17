@@ -57,7 +57,6 @@ maxMon = data2[x + 1]
 minMon = data2[y + 1]
 
 #Output everything to terminal
-print(P__L)
 print("                                         ")
 print("Financial Analysis")
 print("------------------------")
